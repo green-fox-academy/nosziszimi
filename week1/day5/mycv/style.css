@@ -1,0 +1,57 @@
+body{
+  width: 50%;
+  margin: auto;
+}
+
+hgroup#banner{
+  background-image: url(https://github.com/greenfox-academy/teaching-materials/blob/master/html-css/basics/project-cv/workshop/anakin.png?raw=true);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+h2{
+  margin: 0;
+  padding-top: 100px;
+}
+h1{
+  margin: 0;
+  padding-top: 0;
+}
+
+main{
+  font-family: 'Roboto', sans-serif;
+
+}
+
+em{
+  font-style: normal;
+  font-weight: 600;
+}
+p, ul{
+  color: rgba(0, 0, 0, 0.8);
+}
+blockquote{
+  height: 100px;
+  background-color: grey;
+  padding: 0;
+  margin: 0;
+}
+blockquote > p{
+  color: white;
+  font-family: 'PT Serif', serif;
+  font-size: 24px;
+}
+blockquote p:first-child{
+  height: 15px;
+  font-size: 50px;
+  margin-bottom: 0;
+  transform: scale (1, -1);
+}
+
+blockquote p:last-child{
+  margin-top: 0;
+  margin-left: 30px;
+}
+h3{
+  text-transform: uppercase;
+}

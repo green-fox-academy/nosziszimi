@@ -1,0 +1,48 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 5px;
+
+}
+
+section{
+  border: 15px solid #4285F4;
+  width: 350px;
+}
+
+div{
+  width: 350px;
+  height: 130px;
+  margin: 0px;
+  text-align: center;
+}
+
+p {
+  font-size: 30px;
+  padding-top: 45px;
+  margin: 0px;
+}
+
+div.north{
+  background-color: #E67676;
+}
+
+div.east{
+  background-color: #F2F062;
+}
+
+div.south{
+  background-color: #A9E6E6;
+}
+
+div.west{
+  background-color: #7692E4;
+}
+
+/*
+kék border: #4285F4
+north: #E67676
+east: #F2F062
+south: #A9E6E6
+west: #7692E4
+*/

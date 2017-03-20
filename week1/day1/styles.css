@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Merriweather', serif;
+}
+
+img{
+  width: 100%;
+}
+
+article{
+  width: 500px;
+  margin: 0 auto;
+}
+
+em{
+color: rgba(0, 0, 0, 0.6);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/*
+comment
+*/
+
+h1, h2, h3 {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+h2 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 5px;
+
+}
+
+a{
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+
+strong{
+  font-weight: bold;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+p{
+  line-height: 25px;
+  font-size: 14px;
+}
