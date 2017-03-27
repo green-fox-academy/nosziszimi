@@ -29,22 +29,16 @@ public class Ex_01_Lotto {
       allLottoNumbers.add(i);
     }
 
-    mostCommonNumbers.put(1,0);
-    mostCommonNumbers.put(2,0);
-    mostCommonNumbers.put(3,0);
-    mostCommonNumbers.put(4,0);
-    mostCommonNumbers.put(5,0);
 
     try {
       Path path = Paths.get("assets/otos.csv");
       List<String> lines = Files.readAllLines(path);
       for (String line : lines){
         String[] csvColums = line.split(";");
-        numbers.add(csvColums[11]);
-        numbers.add(csvColums[12]);
-        numbers.add(csvColums[13]);
-        numbers.add(csvColums[14]);
-        numbers.add(csvColums[15]);
+
+        for (int i = 11; i < 16 ; i++) {
+          numbers.add(csvColums[i]);
+        }
       }
       for (String s : numbers) {
         numbersInt.add(Integer.valueOf(s));
@@ -56,28 +50,25 @@ public class Ex_01_Lotto {
         numbersOccurences.put(allLottoNumbers.get(i), occurences.get(i));
       }
 
-      highestOccurences.put(1,0);
-      highestOccurences.put(2,0);
-      highestOccurences.put(3,0);
-      highestOccurences.put(4,0);
-      highestOccurences.put(5,0);
+      for (int i = 1; i < 6 ; i++) {
+        highestOccurences.put(i, 0);
+      }
 
-
+      int largestKey = 0;
       for (int j = 1; j < 6; j++) {
         for (Integer key : numbersOccurences.keySet()) {
           if (numbersOccurences.get(key) > highestOccurences.get(j)) {
             highestOccurences.put(j, numbersOccurences.get(key));
-          } else if (numbersOccurences.get(key) == highestOccurences.get(j)) {
-            sameOccurences.put(key, numbersOccurences.get(key));
+            largestKey = key;
           }
         }
-        numbersOccurences.remove(highestOccurences.get(j));
+        mostCommonNumbers.put(largestKey, numbersOccurences.get(largestKey));
+        numbersOccurences.remove(largestKey);
       }
 
 
+      System.out.println(mostCommonNumbers);
 
-      System.out.println(highestOccurences);
-      System.out.println(sameOccurences);
     }
     catch (Exception e) {
       e.printStackTrace();
