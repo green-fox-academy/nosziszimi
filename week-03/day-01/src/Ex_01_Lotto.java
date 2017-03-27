@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -17,6 +18,12 @@ public class Ex_01_Lotto {
     ArrayList<String> numbers = new ArrayList<>();
     ArrayList<Integer> numbersInt = new ArrayList<>();
     ArrayList<Integer> occurences = new ArrayList<>();
+    ArrayList<Integer> allLottoNumbers = new ArrayList<>();
+    HashMap<Integer, Integer> numbersOccurences = new HashMap<>();
+
+    for (int i = 1; i <91 ; i++) {
+      allLottoNumbers.add(i);
+    }
 
     try {
       Path path = Paths.get("assets/otos.csv");
@@ -35,7 +42,9 @@ public class Ex_01_Lotto {
       for (int i = 1; i <91 ; i++) {
         occurences.add(Collections.frequency(numbersInt, i));
       }
-
+      for (int i = 0; i < allLottoNumbers.size(); i++) {
+        numbersOccurences.put(allLottoNumbers.get(i), occurences.get(i));
+      }
     }
     catch (Exception e) {
       e.printStackTrace();
