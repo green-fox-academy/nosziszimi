@@ -22,6 +22,7 @@ public class Ex_01_Lotto {
     HashMap<Integer, Integer> numbersOccurences = new HashMap<>();
     HashMap<Integer, Integer> mostCommonNumbers = new HashMap<>();
     HashMap<Integer, Integer> sameOccurences = new HashMap<>();
+    HashMap<Integer, Integer> highestOccurences = new HashMap<>();
 
 
     for (int i = 1; i <91 ; i++) {
@@ -54,18 +55,33 @@ public class Ex_01_Lotto {
       for (int i = 0; i < allLottoNumbers.size(); i++) {
         numbersOccurences.put(allLottoNumbers.get(i), occurences.get(i));
       }
-      for (Integer key : numbersOccurences.keySet()) {
-        if (numbersOccurences.get(key) > mostCommonNumbers.get(1)){
-          mostCommonNumbers.put(1, key);
-        } else if (numbersOccurences.get(key) == mostCommonNumbers.get(1)) {
-          sameOccurences.put(key, numbersOccurences.get(key));
+
+      highestOccurences.put(1,0);
+      highestOccurences.put(2,0);
+      highestOccurences.put(3,0);
+      highestOccurences.put(4,0);
+      highestOccurences.put(5,0);
+
+
+      for (int j = 1; j < 6; j++) {
+        for (Integer key : numbersOccurences.keySet()) {
+          if (numbersOccurences.get(key) > highestOccurences.get(j)) {
+            highestOccurences.put(j, numbersOccurences.get(key));
+          } else if (numbersOccurences.get(key) == highestOccurences.get(j)) {
+            sameOccurences.put(key, numbersOccurences.get(key));
+          }
         }
+        numbersOccurences.remove(highestOccurences.get(j));
       }
-      System.out.println(mostCommonNumbers);
+
+
+
+      System.out.println(highestOccurences);
       System.out.println(sameOccurences);
     }
     catch (Exception e) {
       e.printStackTrace();
     }
   }
+
 }
