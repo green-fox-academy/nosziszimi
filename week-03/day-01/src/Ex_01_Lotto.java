@@ -20,10 +20,19 @@ public class Ex_01_Lotto {
     ArrayList<Integer> occurences = new ArrayList<>();
     ArrayList<Integer> allLottoNumbers = new ArrayList<>();
     HashMap<Integer, Integer> numbersOccurences = new HashMap<>();
+    HashMap<Integer, Integer> mostCommonNumbers = new HashMap<>();
+    HashMap<Integer, Integer> sameOccurences = new HashMap<>();
+
 
     for (int i = 1; i <91 ; i++) {
       allLottoNumbers.add(i);
     }
+
+    mostCommonNumbers.put(1,0);
+    mostCommonNumbers.put(2,0);
+    mostCommonNumbers.put(3,0);
+    mostCommonNumbers.put(4,0);
+    mostCommonNumbers.put(5,0);
 
     try {
       Path path = Paths.get("assets/otos.csv");
@@ -45,6 +54,15 @@ public class Ex_01_Lotto {
       for (int i = 0; i < allLottoNumbers.size(); i++) {
         numbersOccurences.put(allLottoNumbers.get(i), occurences.get(i));
       }
+      for (Integer key : numbersOccurences.keySet()) {
+        if (numbersOccurences.get(key) > mostCommonNumbers.get(1)){
+          mostCommonNumbers.put(1, key);
+        } else if (numbersOccurences.get(key) == mostCommonNumbers.get(1)) {
+          sameOccurences.put(key, numbersOccurences.get(key));
+        }
+      }
+      System.out.println(mostCommonNumbers);
+      System.out.println(sameOccurences);
     }
     catch (Exception e) {
       e.printStackTrace();
