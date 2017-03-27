@@ -3,14 +3,21 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Nóra on 2017. 03. 27..
  */
+
+// Create a method that find the 5 most common lotto numbers assets/lotto.csv
+
 public class Ex_01_Lotto {
   public static void main(String[] args) {
     ArrayList<String> numbers = new ArrayList<>();
+    ArrayList<Integer> numbersInt = new ArrayList<>();
+    ArrayList<Integer> occurences = new ArrayList<>();
+
     try {
       Path path = Paths.get("assets/otos.csv");
       List<String> lines = Files.readAllLines(path);
@@ -22,11 +29,16 @@ public class Ex_01_Lotto {
         numbers.add(csvColums[14]);
         numbers.add(csvColums[15]);
       }
-      numbers.toString()
+      for (String s : numbers) {
+        numbersInt.add(Integer.valueOf(s));
+      }
+      for (int i = 1; i <91 ; i++) {
+        occurences.add(Collections.frequency(numbersInt, i));
+      }
+
     }
     catch (Exception e) {
       e.printStackTrace();
     }
-
   }
 }
