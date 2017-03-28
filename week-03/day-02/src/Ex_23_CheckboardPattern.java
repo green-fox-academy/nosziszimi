@@ -9,9 +9,20 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex_23_CheckboardPattern {
   public static void mainDraw(Graphics graphics){
     // fill the canvas with a checkerboard pattern.
-    for (int i = 0; i < 15 ; i++) {
-      graphics.setColor(Color.BLACK);
-      graphics.fillRect(i*20, 0,10,10);
+
+    graphics.setColor(Color.BLACK);
+
+    for (int row = 0; row < 30 ; row++) {
+      if (row%2 != 1) {
+        for (int column = 0; column < 15; column++) {
+          graphics.fillRect(column * 20, 0+row*10, 10, 10);
+        }
+      }
+      else {
+        for (int column = 0; column < 15; column++) {
+          graphics.fillRect(10 + column * 20, row*10, 10, 10);
+        }
+      }
     }
   }
   public static void main(String[] args) {
