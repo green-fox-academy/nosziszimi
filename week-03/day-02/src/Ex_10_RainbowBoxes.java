@@ -13,10 +13,12 @@ public class Ex_10_RainbowBoxes {
     // the square size, and the fill color,
     // and draws a square of that size and color to the center of the canvas.
     // create a loop that fills the canvas with rainbow colored squares.
-    squareDrawer(50, Color.RED, graphics);
+    for (int i = 0; i < 50; i++) {
+      squareDrawer((int) (Math.random() * 301), (int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256), graphics);
+    }
 }
-  public static void squareDrawer (int size, java.awt.Color color,Graphics graphics){
-    graphics.setColor(color);
+  public static void squareDrawer (int size, int r, int g, int b, int a, Graphics graphics){
+    graphics.setColor(new Color(r, g, b, a));
     graphics.fillRect(150-(size/2), 150-(size/2), size, size);
   }
   public static void main(String[] args) {
