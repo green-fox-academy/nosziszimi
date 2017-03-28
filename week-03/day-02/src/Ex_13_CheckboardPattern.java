@@ -6,7 +6,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by Nóra on 2017. 03. 28..
  */
-public class Ex_23_CheckboardPattern {
+public class Ex_13_CheckboardPattern {
   public static void mainDraw(Graphics graphics){
     // fill the canvas with a checkerboard pattern.
 
