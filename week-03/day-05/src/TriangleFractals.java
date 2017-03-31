@@ -21,19 +21,16 @@ public class TriangleFractals {
     int[] xPoly3 = {xPoly1[2], xPoly2[2], x+width/2};
     int[] yPoly3 = {yPoly1[2], yPoly2[2], y+height};
 
-
     if (width <= 1 || height <= 1){
     }
     else {
       graphics.drawPolygon(xPoly1, yPoly1, xPoly1.length);
       graphics.drawPolygon(xPoly2, yPoly2, xPoly2.length);
       graphics.drawPolygon(xPoly3, yPoly3, xPoly3.length);
+
       triangleDrawer(x, y,width/2, height/2, graphics);
       triangleDrawer(x+width/2, y,width/2, height/2, graphics);
       triangleDrawer(x+width/4, y+height/2,width/2, height/2, graphics);
-
-
-
     }
   }
   public static void main(String[] args) {
