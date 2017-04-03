@@ -2,6 +2,7 @@
  * Created by Nóra on 2017. 04. 03..
  */
 public class Pirate {
+
   int intoxication;
   int rumCounter;
   boolean isAlive;
@@ -13,13 +14,13 @@ public class Pirate {
   }
 
   public String drinkSomeRum() {
-   if (isAlive) {
-     intoxication++;
-     rumCounter++;
-     return "";
-   } else {
-     return "he's dead";
-   }
+    if (isAlive) {
+      intoxication++;
+      rumCounter++;
+      return "";
+    } else {
+      return "he's dead";
+    }
   }
 
   public String howsItGoingMaTe() {
@@ -35,13 +36,13 @@ public class Pirate {
     }
   }
 
-   public void die() {
-      isAlive = false;
-   }
+  public void die() {
+    isAlive = false;
+  }
 
-   public String brawl(Pirate pirate){
+  public String brawl(Pirate pirate) {
     if (isAlive && pirate.isAlive) {
-      int chance = (int)(Math.random()*3);
+      int chance = (int) (Math.random() * 3);
       if (chance == 0) {
         isAlive = false;
         return "pirate1 has died.";
@@ -53,10 +54,10 @@ public class Pirate {
         pirate.isAlive = false;
         return "Both of the pirates died in the brawl.";
       }
-    } else{
+    } else {
       return "Unfortunately one of the pirates is dead so they can not brawl.";
     }
-   }
+  }
 
   public static void main(String[] args) {
     Pirate p1 = new Pirate();
@@ -65,7 +66,7 @@ public class Pirate {
     p1.drinkSomeRum();
     System.out.println(p1.howsItGoingMaTe());
 
-    for (int i = 0; i < 5 ; i++) {
+    for (int i = 0; i < 5; i++) {
       p1.drinkSomeRum();
     }
     System.out.println(p1.howsItGoingMaTe());
