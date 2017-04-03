@@ -6,10 +6,14 @@ import java.util.List;
 public class Ex_11_SharpieSet {
   List<Sharpie> sharpieSet;
 
+  public Ex_11_SharpieSet() {
+    sharpieSet = new List<>();
+  }
+
   public int countUsable() {
     int usable = 0;
     for (Sharpie sharpie : sharpieSet) {
-      if (sharpie.inkAmount < 0) {
+      if (sharpie.inkAmount > 0) {
         usable++;
       }
     }
@@ -17,9 +21,11 @@ public class Ex_11_SharpieSet {
   }
 
   public void removeTrash() {
-    for (Sharpie sharpie : sharpieSet) {
-      if (sharpie.inkAmount <= 0) {
-        sharpieSet.remove(sharpie);
+    for (int i = 0; i < sharpieSet.size();) {
+      if (sharpieSet.get(i).inkAmount <= 0) {
+        sharpieSet.remove(i);
+      } else {
+        i++;
       }
     }
   }
