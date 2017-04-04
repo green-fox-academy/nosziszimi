@@ -5,4 +5,10 @@ package AircraftCarrier;
  */
 public class F16 extends Aircraft {
 
+  public F16() {
+    ammo = 0;
+    maxAmmo = 8;
+    baseDamage = 30;
+    type = "F16";
+  }
 }
