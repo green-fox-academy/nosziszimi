@@ -13,4 +13,8 @@ public class Tree extends Plant{
     super("unknown");
     needWater = (waterAmount < 10);
   }
+
+  public void beingWatered(double amountOfWater) {
+    waterAmount += amountOfWater*0.4;
+  }
 }

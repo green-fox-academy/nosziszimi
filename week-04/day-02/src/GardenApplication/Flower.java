@@ -14,4 +14,8 @@ public class Flower extends Plant {
     needWater = (waterAmount < 5);
   }
 
+  public void beingWatered(double amountOfWater) {
+    waterAmount += amountOfWater*0.75;
+  }
+
 }

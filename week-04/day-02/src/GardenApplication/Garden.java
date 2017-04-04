@@ -14,7 +14,20 @@ public class Garden {
     plants = new ArrayList<>();
   }
 
-  public void water(double amountOfWater) {
+  public ArrayList<Plant> getNeedsWaterPlants() {
+    ArrayList<Plant> needsWaterPlants = new ArrayList<>();
+    for (Plant plant : plants) {
+      if (plant.needWater) {
+        needsWaterPlants.add(plant);
+      }
+    }
+    return needsWaterPlants;
+  }
 
+  public void water(double amountOfWater) {
+    double waterForEach = amountOfWater/getNeedsWaterPlants().size();
+    for (int i = 0; i < getNeedsWaterPlants().size(); i++) {
+      getNeedsWaterPlants().get(i).beingWatered(waterForEach);
+    }
   }
 }

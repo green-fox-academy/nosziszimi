@@ -5,7 +5,7 @@ package GardenApplication;
  */
 public class Plant {
   String color;
-  int waterAmount;
+  double waterAmount;
   boolean needWater;
 
   public Plant() {
@@ -15,5 +15,9 @@ public class Plant {
   public Plant(String color) {
     this.color = color;
     waterAmount = 0;
+  }
+
+  public void beingWatered(double amountOfWater) {
+    waterAmount += amountOfWater;
   }
 }
