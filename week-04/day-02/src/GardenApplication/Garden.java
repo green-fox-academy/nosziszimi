@@ -29,5 +29,6 @@ public class Garden {
     for (int i = 0; i < getNeedsWaterPlants().size(); i++) {
       getNeedsWaterPlants().get(i).beingWatered(waterForEach);
     }
+    System.out.println("Watering with " + amountOfWater);
   }
 }

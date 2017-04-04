@@ -20,4 +20,14 @@ public class Plant {
   public void beingWatered(double amountOfWater) {
     waterAmount += amountOfWater;
   }
+
+  public void info() {
+    String waterState;
+    if (needWater) {
+      waterState = "needs";
+    } else {
+      waterState = "doesnt need";
+    }
+    System.out.println("The " + color + " Plant " + waterState + "water.");
+  }
 }

@@ -18,4 +18,14 @@ public class Flower extends Plant {
     waterAmount += amountOfWater*0.75;
   }
 
+  public void info() {
+    String waterState;
+    if (needWater) {
+      waterState = "needs";
+    } else {
+      waterState = "doesnt need";
+    }
+    System.out.println("The " + color + " Flower " + waterState + "water.");
+  }
+
 }

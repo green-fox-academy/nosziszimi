@@ -17,4 +17,14 @@ public class Tree extends Plant{
   public void beingWatered(double amountOfWater) {
     waterAmount += amountOfWater*0.4;
   }
+
+  public void info() {
+    String waterState;
+    if (needWater) {
+      waterState = "needs";
+    } else {
+      waterState = "doesnt need";
+    }
+    System.out.println("The " + color + " Tree " + waterState + "water.");
+  }
 }
