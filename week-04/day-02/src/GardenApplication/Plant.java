@@ -17,6 +17,10 @@ public class Plant {
     waterAmount = 0;
   }
 
+  public boolean isNeedWater() {
+    return needWater;
+  }
+
   public void beingWatered(double amountOfWater) {
     waterAmount += amountOfWater;
   }

@@ -16,6 +16,7 @@ public class Flower extends Plant {
 
   public void beingWatered(double amountOfWater) {
     waterAmount += amountOfWater*0.75;
+    needWater = (waterAmount < 5);
   }
 
   public void info() {
@@ -25,7 +26,7 @@ public class Flower extends Plant {
     } else {
       waterState = "doesnt need";
     }
-    System.out.println("The " + color + " Flower " + waterState + "water.");
+    System.out.println("The " + color + " Flower " + waterState + " water.");
   }
 
 }

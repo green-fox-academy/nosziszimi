@@ -10,12 +10,13 @@ public class Tree extends Plant{
   }
 
   public Tree(String color) {
-    super("unknown");
+    super(color);
     needWater = (waterAmount < 10);
   }
 
   public void beingWatered(double amountOfWater) {
     waterAmount += amountOfWater*0.4;
+    needWater = (waterAmount < 10);
   }
 
   public void info() {
@@ -25,6 +26,6 @@ public class Tree extends Plant{
     } else {
       waterState = "doesnt need";
     }
-    System.out.println("The " + color + " Tree " + waterState + "water.");
+    System.out.println("The " + color + " Tree " + waterState + " water.");
   }
 }

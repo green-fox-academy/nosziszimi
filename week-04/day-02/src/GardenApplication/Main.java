@@ -19,6 +19,10 @@ public class Main {
     myGarden.plants.add(t1);
     myGarden.plants.add(t2);
 
-
+    myGarden.info();
+    myGarden.water(40);
+    myGarden.info();
+    myGarden.water(70);
+    myGarden.info();
   }
 }
