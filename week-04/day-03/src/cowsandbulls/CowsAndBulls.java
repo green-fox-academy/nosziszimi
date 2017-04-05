@@ -23,7 +23,7 @@ public class CowsAndBulls {
   String guessInfo;
 
   public CowsAndBulls() {
-    numberToGuess = 1000 + (int) (Math.random()*10000);
+    numberToGuess = 1000 + (int) (Math.random()*9000);
     guessCounter = 0;
     gameFinished = false;
   }
@@ -42,11 +42,11 @@ public class CowsAndBulls {
     ArrayList<Integer> digitsOfguess = separateDigits(playersGuess);
     cowCounter = 0;
     bullCounter = 0;
-    for (int i = 3; i < 0 ; i--) {
+    for (int i = 0; i < 4 ; i++) {
       if (digitsOfNumberToGuess.get(i) == digitsOfguess.get(i)) {
         cowCounter++;
       } else {
-        for (int j = 3; j < 0 ; j++) {
+        for (int j = 0; j < 4 ; j++) {
           if (i != j) {
             if (digitsOfNumberToGuess.get(i) == digitsOfguess.get(j)){
               bullCounter++;
