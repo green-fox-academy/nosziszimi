@@ -1,6 +1,7 @@
 package cowsandbulls;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by Nóra on 2017. 04. 05..
@@ -17,8 +18,9 @@ import java.util.ArrayList;
 //All methods, including constructor should be tested .
 
 public class CowsAndBulls {
-  int numberToGuess, guessCounter, cowCounter, bullCounter;
+  int numberToGuess, guessCounter, cowCounter, bullCounter, playersGuess;
   boolean gameFinished;
+  String guessInfo;
 
   public CowsAndBulls() {
     numberToGuess = 1000 + (int) (Math.random()*10000);
@@ -35,9 +37,9 @@ public class CowsAndBulls {
     return separatedDigits;
   }
 
-  String guess(int guessedNumber) {
+  void guess() {
     ArrayList<Integer> digitsOfNumberToGuess = separateDigits(numberToGuess);
-    ArrayList<Integer> digitsOfguess = separateDigits(guessedNumber);
+    ArrayList<Integer> digitsOfguess = separateDigits(playersGuess);
     cowCounter = 0;
     bullCounter = 0;
     for (int i = 3; i < 0 ; i--) {
@@ -54,7 +56,7 @@ public class CowsAndBulls {
       }
     }
     guessCounter++;
-    return "You have " + cowCounter + " cow, and " + bullCounter + " bull.";
+    guessInfo = "You have " + cowCounter + " cow, and " + bullCounter + " bull.";
     updateTheState();
     checkTheState();
   }
@@ -68,7 +70,30 @@ public class CowsAndBulls {
   void checkTheState() {
       if (gameFinished) {
         System.out.println("The game is finished. You won!! It took you only " + guessCounter + " guess to win.");
+      } else {
+        System.out.println(guessInfo);
+        nextGuess();
       }
+  }
+  void startingTheGame() {
+    System.out.println("I taught of a positive 4 digit number. Try to guess my number!");
+    Scanner scanner = new Scanner(System.in);
+    playersGuess = scanner.nextInt();
+      while (!(playersGuess < 10000 && playersGuess > 999)) {
+        System.out.println("It was not a positive for digit number. Try again to guess my number!");
+        playersGuess = scanner.nextInt();
+      }
+    guessCounter++;
+  }
+  void nextGuess() {
+    System.out.println("Give me your next guess!");
+    Scanner scanner = new Scanner(System.in);
+    playersGuess = scanner.nextInt();
+    while (!(playersGuess < 10000 && playersGuess > 999)) {
+      System.out.println("It was not a positive for digit number. Try again to guess my number!");
+      playersGuess = scanner.nextInt();
+    }
+    guessCounter++;
   }
 
 
