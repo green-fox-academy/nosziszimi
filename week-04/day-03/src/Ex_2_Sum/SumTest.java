@@ -14,7 +14,7 @@ class SumTest {
 
   Sum s = new Sum();
   ArrayList<Integer> integers;
-  
+
 
   @Test
   void sum() {
