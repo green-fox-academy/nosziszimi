@@ -22,7 +22,7 @@ public class CowsAndBulls {
 
   public CowsAndBulls() {
     numberToGuess = 1000 + (int) (Math.random()*10000);
-    guessCounter =0;
+    guessCounter = 0;
     gameFinished = false;
   }
 
@@ -53,7 +53,22 @@ public class CowsAndBulls {
         }
       }
     }
+    guessCounter++;
     return "You have " + cowCounter + " cow, and " + bullCounter + " bull.";
+    updateTheState();
+    checkTheState();
+  }
+
+  void updateTheState() {
+    if (cowCounter == 4) {
+      gameFinished = true;
+    }
+  }
+
+  void checkTheState() {
+      if (gameFinished) {
+        System.out.println("The game is finished. You won!! It took you only " + guessCounter + " guess to win.");
+      }
   }
 
 
