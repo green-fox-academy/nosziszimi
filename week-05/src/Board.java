@@ -28,7 +28,11 @@ import java.awt.*;
       // you can create and draw an image using the class below e.g.
       Area a1 = new Area();
       a1.fillTilesList();
+      a1.fillWallList();
       for (Tile tile : a1.tilesList) {
+        tile.draw(graphics);
+      }
+      for (Tile tile : a1.wallList) {
         tile.draw(graphics);
       }
     }
