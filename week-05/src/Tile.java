@@ -11,9 +11,13 @@ public class Tile {
   BufferedImage image;
   int posX, posY;
 
-  public Tile(String filename, int posX, int posY) {
-    this.posX = posX;
-    this.posY = posY;
+  public Tile() {
+
+  }
+
+  public Tile(String filename, int column, int row) {
+    this.posX = column*72;
+    this.posY = row*72;
     try {
       image = ImageIO.read(new File(filename));
     } catch (IOException e) {
