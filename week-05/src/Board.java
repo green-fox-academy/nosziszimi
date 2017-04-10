@@ -9,12 +9,15 @@ import java.awt.*;
 
   public class Board extends JComponent implements KeyListener {
 
-    int testBoxX;
-    int testBoxY;
+    Area area;
+    Hero hero;
 
     public Board() {
-      testBoxX = 300;
-      testBoxY = 300;
+      area = new Area();
+      hero = new Hero(0,0);
+
+      area.fillTilesList();
+      area.fillWallList();
 
       // set the size of your draw board
       setPreferredSize(new Dimension(720, 720));
@@ -26,18 +29,14 @@ import java.awt.*;
       super.paint(graphics);
       // here you have a 720x720 canvas
       // you can create and draw an image using the class below e.g.
-      Area a1 = new Area();
-      a1.fillTilesList();
-      a1.fillWallList();
-      for (Tile tile : a1.tilesList) {
+
+      for (Tile tile : area.tilesList) {
         tile.draw(graphics);
       }
-      a1.fillWallList();
-      for (Tile tile : a1.wallList) {
+      for (Tile tile : area.wallList) {
         tile.draw(graphics);
       }
-      Hero h1 = new Hero(0,0);
-      h1.draw(graphics);
+      hero.draw(graphics);
     }
 
     public static void main(String[] args) {
@@ -72,13 +71,13 @@ import java.awt.*;
     public void keyReleased(KeyEvent e) {
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
-        testBoxY -= 100;
+        hero.posX -= 72;
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-        testBoxY += 100;
+        hero.posY += 72;
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-        testBoxX -= 100;
+        hero.posY -= 72;
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-        testBoxX += 100;
+        hero.posX += 72;
       }
       // and redraw to have a new picture with the new coordinates
       invalidate();
