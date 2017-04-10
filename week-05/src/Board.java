@@ -24,11 +24,13 @@ import java.awt.*;
     @Override
     public void paint(Graphics graphics) {
       super.paint(graphics);
-      graphics.fillRect(testBoxX, testBoxY, 100, 100);
       // here you have a 720x720 canvas
       // you can create and draw an image using the class below e.g.
-      PositionedImage image = new PositionedImage("assets/boss.png", 300, 300);
-      image.draw(graphics);
+      Area a1 = new Area();
+      a1.fillTilesList();
+      for (Tile tile : a1.tilesList) {
+        tile.draw(graphics);
+      }
     }
 
     public static void main(String[] args) {
