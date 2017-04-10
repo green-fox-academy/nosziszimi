@@ -32,9 +32,12 @@ import java.awt.*;
       for (Tile tile : a1.tilesList) {
         tile.draw(graphics);
       }
+      a1.fillWallList();
       for (Tile tile : a1.wallList) {
         tile.draw(graphics);
       }
+      Hero h1 = new Hero(0,0);
+      h1.draw(graphics);
     }
 
     public static void main(String[] args) {
