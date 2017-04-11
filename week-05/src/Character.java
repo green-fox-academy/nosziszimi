@@ -7,7 +7,7 @@ public class Character extends GameObject {
 
   }
 
-  public Character(String filename) {
-    super(filename, 0, 0);
+  public Character(String filename, int column, int row) {
+    super(filename, column, row);
   }
 }

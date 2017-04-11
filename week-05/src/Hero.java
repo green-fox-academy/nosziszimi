@@ -4,10 +4,6 @@
 public class Hero extends Character {
 
   public Hero() {
-
-  }
-
-  public Hero(int column, int row) {
-    super("assets/hero-down.png", column, row);
+    super("assets/hero-down.png", 0, 0);
   }
 }
