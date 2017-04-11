@@ -71,13 +71,13 @@ import java.awt.*;
     public void keyReleased(KeyEvent e) {
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
-        hero.posY --;
+        hero.rowIndex--;
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-        hero.posY ++;
+        hero.rowIndex++;
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-        hero.posX --;
+        hero.columnIndex--;
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-        hero.posX ++;
+        hero.columnIndex++;
       }
       // and redraw to have a new picture with the new coordinates
       invalidate();
