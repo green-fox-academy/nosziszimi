@@ -14,7 +14,7 @@ import java.awt.*;
 
     public Board() {
       area = new Area();
-      hero = new Hero(0,0);
+      hero = new Hero();
 
       area.fillTilesList();
       area.fillWallList();
@@ -71,13 +71,13 @@ import java.awt.*;
     public void keyReleased(KeyEvent e) {
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
-        hero.posY -= 72;
+        hero.posY -= GameObject.TILE_HEIGHT;
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-        hero.posY += 72;
+        hero.posY += GameObject.TILE_HEIGHT;
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-        hero.posX -= 72;
+        hero.posX -= GameObject.TILE_WIDTH;
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-        hero.posX += 72;
+        hero.posX += GameObject.TILE_WIDTH;
       }
       // and redraw to have a new picture with the new coordinates
       invalidate();
