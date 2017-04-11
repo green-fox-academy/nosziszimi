@@ -71,11 +71,11 @@ import java.awt.*;
     public void keyReleased(KeyEvent e) {
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
-        hero.posX -= 72;
+        hero.posY -= 72;
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
         hero.posY += 72;
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-        hero.posY -= 72;
+        hero.posX -= 72;
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
         hero.posX += 72;
       }
