@@ -19,8 +19,8 @@ public class GameObject {
   }
 
   public GameObject(String filename, int column, int row) {
-    this.posX = column* COLUMN_WIDTH;
-    this.posY = row* ROW_HEIGHT;
+    this.posX = column;
+    this.posY = row;
     try {
       image = ImageIO.read(new File(filename));
     } catch (IOException e) {
@@ -30,7 +30,7 @@ public class GameObject {
 
   public void draw(Graphics graphics) {
     if (image != null) {
-      graphics.drawImage(image, posX, posY,null);
+      graphics.drawImage(image, posX * COLUMN_WIDTH, posY * ROW_HEIGHT,null);
     }
   }
 }
