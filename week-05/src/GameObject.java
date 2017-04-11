@@ -8,8 +8,8 @@ import javax.imageio.ImageIO;
  * Created by Nóra on 2017. 04. 10..
  */
 public class GameObject {
-  public static final int TILE_WIDTH = 72;
-  public static final int TILE_HEIGHT = 72;
+  public static final int COLUMN_WIDTH = 72;
+  public static final int ROW_HEIGHT = 72;
   BufferedImage image;
   int posX, posY;
 
@@ -19,8 +19,8 @@ public class GameObject {
   }
 
   public GameObject(String filename, int column, int row) {
-    this.posX = column*TILE_WIDTH;
-    this.posY = row*TILE_HEIGHT;
+    this.posX = column* COLUMN_WIDTH;
+    this.posY = row* ROW_HEIGHT;
     try {
       image = ImageIO.read(new File(filename));
     } catch (IOException e) {
