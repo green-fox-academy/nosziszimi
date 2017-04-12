@@ -73,16 +73,24 @@ import java.awt.*;
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
         hero.image = ImageLoader.getInstance().HERO_UP;
-        hero.rowIndex--;
+        if (hero.rowIndex > 0) {
+          hero.rowIndex--;
+        }
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
         hero.image = ImageLoader.getInstance().HERO_DOWN;
-        hero.rowIndex++;
+        if (hero.rowIndex < 9) {
+          hero.rowIndex++;
+        }
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
         hero.image = ImageLoader.getInstance().HERO_LEFT;
-        hero.columnIndex--;
+        if (hero.columnIndex > 0) {
+          hero.columnIndex--;
+        }
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
         hero.image = ImageLoader.getInstance().HERO_RIGHT;
-        hero.columnIndex++;
+        if (hero.columnIndex < 9) {
+          hero.columnIndex++;
+        }
       }
       // and redraw to have a new picture with the new coordinates
       invalidate();
