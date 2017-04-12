@@ -1,3 +1,5 @@
+import java.awt.image.BufferedImage;
+
 /**
  * Created by Nóra on 2017. 04. 10..
  */

@@ -8,7 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
   public class Board extends JComponent implements KeyListener {
-
+    static final int BOARD_WIDTH = 720;
+    static final int BOARD_HEIGHT = 720;
     Area area;
     Hero hero;
 
@@ -20,7 +21,7 @@ import java.awt.*;
       area.fillWallList();
 
       // set the size of your draw board
-      setPreferredSize(new Dimension(720, 720));
+      setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
       setVisible(true);
     }
 
@@ -71,12 +72,16 @@ import java.awt.*;
     public void keyReleased(KeyEvent e) {
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
+        hero.image = ImageLoader.getInstance().HERO_UP;
         hero.rowIndex--;
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+        hero.image = ImageLoader.getInstance().HERO_DOWN;
         hero.rowIndex++;
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+        hero.image = ImageLoader.getInstance().HERO_LEFT;
         hero.columnIndex--;
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+        hero.image = ImageLoader.getInstance().HERO_RIGHT;
         hero.columnIndex++;
       }
       // and redraw to have a new picture with the new coordinates
