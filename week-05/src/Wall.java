@@ -6,6 +6,7 @@ import java.awt.Graphics;
 public class Wall extends Tile {
 
   public Wall(int column, int row) {
-    super("assets/wall.png", column, row);
+    super(column, row);
+    image = ImageLoader.getInstance().WALL;
   }
 }

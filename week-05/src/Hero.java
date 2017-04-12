@@ -4,6 +4,7 @@
 public class Hero extends Character {
 
   public Hero() {
-    super("assets/hero-down.png", 0, 0);
+    super(0, 0);
+    image = ImageLoader.getInstance().HERO_DOWN;
   }
 }

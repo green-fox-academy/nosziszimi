@@ -6,7 +6,8 @@ import java.awt.Graphics;
 public class Floor extends Tile {
 
   public Floor(int column, int row) {
-    super("assets/floor.png", column, row);
+    super(column, row);
+    image = ImageLoader.getInstance().FLOOR;
   }
 }
 

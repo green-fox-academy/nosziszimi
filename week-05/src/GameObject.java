@@ -18,14 +18,9 @@ public class GameObject {
 
   }
 
-  public GameObject(String filename, int column, int row) {
+  public GameObject(int column, int row) {
     this.columnIndex = column;
     this.rowIndex = row;
-    try {
-      image = ImageIO.read(new File(filename));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
   }
 
   public void draw(Graphics graphics) {

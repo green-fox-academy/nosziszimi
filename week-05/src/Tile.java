@@ -13,8 +13,8 @@ public class Tile extends GameObject {
 
   }
 
-  public Tile(String filename, int column, int row) {
-    super(filename,column, row);
+  public Tile(int column, int row) {
+    super(column, row);
   }
 }
 
