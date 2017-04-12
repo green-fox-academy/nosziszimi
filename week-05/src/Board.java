@@ -13,20 +13,18 @@ import java.awt.*;
     static final int BOARD_HEIGHT = 720;
     Area area;
     Hero hero;
-    Skeleton skeleton;
     WallChecker wallChecker;
-    ArrayList<Character> skeletonList;
 
     public Board() {
       area = new Area();
       hero = new Hero();
-      skeleton = new Skeleton(area);
       wallChecker = new WallChecker();
-      skeletonList = new ArrayList<>();
-
       area.fillTilesList();
       area.fillWallList();
-
+      for (int i = 0; i < 3; i++) {
+        new Skeleton(area);
+      }
+      
       // set the size of your draw board
       setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
       setVisible(true);
