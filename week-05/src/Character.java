@@ -4,7 +4,6 @@
 public class Character extends GameObject {
 
   public Character() {
-
   }
 
   public Character(int column, int row) {

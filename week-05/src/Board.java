@@ -12,10 +12,12 @@ import java.awt.*;
     static final int BOARD_HEIGHT = 720;
     Area area;
     Hero hero;
+    WallChecker wallChecker;
 
     public Board() {
       area = new Area();
       hero = new Hero();
+      wallChecker = new WallChecker();
 
       area.fillTilesList();
       area.fillWallList();
@@ -73,22 +75,22 @@ import java.awt.*;
       // When the up or down keys hit, we change the position of our box
       if (e.getKeyCode() == KeyEvent.VK_UP) {
         hero.image = ImageLoader.getInstance().HERO_UP;
-        if (hero.rowIndex > 0) {
+        if (hero.rowIndex > 0 && !wallChecker.isUpWall(area, hero)) {
           hero.rowIndex--;
         }
       } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
         hero.image = ImageLoader.getInstance().HERO_DOWN;
-        if (hero.rowIndex < 9) {
+        if (hero.rowIndex < 9 && !wallChecker.isDownWall(area, hero)) {
           hero.rowIndex++;
         }
       } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
         hero.image = ImageLoader.getInstance().HERO_LEFT;
-        if (hero.columnIndex > 0) {
+        if (hero.columnIndex > 0 && !wallChecker.isLeftWall(area, hero)) {
           hero.columnIndex--;
         }
       } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
         hero.image = ImageLoader.getInstance().HERO_RIGHT;
-        if (hero.columnIndex < 9) {
+        if (hero.columnIndex < 9 && !wallChecker.isRightWall(area, hero)) {
           hero.columnIndex++;
         }
       }
