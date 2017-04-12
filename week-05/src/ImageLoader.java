@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
  * Created by Nóra on 2017. 04. 12..
  */
 public class ImageLoader {
+
   private static ImageLoader imageLoader;
   public BufferedImage FLOOR, WALL, HERO_UP, HERO_DOWN, HERO_LEFT, HERO_RIGHT, SKELETON, BOSS;
 

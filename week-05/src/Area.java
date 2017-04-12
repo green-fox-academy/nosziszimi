@@ -1,57 +1,63 @@
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * Created by Nóra on 2017. 04. 10..
  */
 public class Area {
-  ArrayList<Tile> tilesList;
+
+  ArrayList<Tile> floorList;
   ArrayList<Tile> wallList;
+  ArrayList<Tile> tileList;
 
   public Area() {
-    tilesList = new ArrayList<>();
+    floorList = new ArrayList<>();
     wallList = new ArrayList<>();
+    this.fillFloorList();
+    this.fillWallList();
+    tileList = new ArrayList<>();
+    fillTileList();
   }
 
-  void fillTilesList() {
+  void fillFloorList() {
     for (int column = 0; column < 10; column++) {
       for (int row = 0; row < 10; row++) {
-        tilesList.add(new Floor(column, row));
+        floorList.add(new Floor(column, row));
       }
     }
   }
+
   void fillWallList() {
-    for (int column = 0; column < 10 ; column++) {
+    for (int column = 0; column < 10; column++) {
       if (column == 0) {
         wallList.add(new Wall(column, 4));
       }
       if (column == 1) {
-        for (int row = 2 ; row < 10; row+=2) {
+        for (int row = 2; row < 10; row += 2) {
           wallList.add(new Wall(column, row));
         }
-        wallList.add(new Wall(column, 5 ));
+        wallList.add(new Wall(column, 5));
       }
       if (column == 2) {
-        for (int row = 2; row < 10; row*=2) {
+        for (int row = 2; row < 10; row *= 2) {
           wallList.add(new Wall(column, row));
         }
       }
       if (column == 3) {
-        for (int row = 0; row < 10 ; row+=2) {
+        for (int row = 0; row < 10; row += 2) {
           wallList.add(new Wall(column, row));
         }
-        for (int row = 1; row < 10; row+=4) {
+        for (int row = 1; row < 10; row += 4) {
           wallList.add(new Wall(column, row));
         }
       }
       if (column == 5) {
-        for (int row = 0; row < 8 ; row+=2) {
+        for (int row = 0; row < 8; row += 2) {
           wallList.add(new Wall(column, row));
         }
-        for (int row = 1; row < 5 ; row+=2) {
+        for (int row = 1; row < 5; row += 2) {
           wallList.add(new Wall(column, row));
         }
-        for (int row = 7; row < 10 ; row+=2) {
+        for (int row = 7; row < 10; row += 2) {
           wallList.add(new Wall(column, row));
         }
       }
@@ -74,8 +80,10 @@ public class Area {
         }
       }
     }
+  }
 
-
-
+  public void fillTileList() {
+    tileList.addAll(floorList);
+    tileList.addAll(wallList);
   }
 }

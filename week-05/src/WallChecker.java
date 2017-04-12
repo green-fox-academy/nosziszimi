@@ -18,6 +18,7 @@ public class WallChecker {
     }
     return isWall;
   }
+
   public boolean isRightWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
@@ -27,6 +28,7 @@ public class WallChecker {
     }
     return isWall;
   }
+
   public boolean isUpWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
@@ -36,6 +38,7 @@ public class WallChecker {
     }
     return isWall;
   }
+
   public boolean isDownWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
@@ -45,6 +48,7 @@ public class WallChecker {
     }
     return isWall;
   }
+
   public boolean isWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {

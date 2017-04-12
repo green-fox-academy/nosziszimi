@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
  * Created by Nóra on 2017. 04. 10..
  */
 public class GameObject {
+
   public static final int COLUMN_WIDTH = 72;
   public static final int ROW_HEIGHT = 72;
   BufferedImage image;
@@ -33,7 +34,7 @@ public class GameObject {
 
   public void draw(Graphics graphics) {
     if (image != null) {
-      graphics.drawImage(image, columnIndex * COLUMN_WIDTH, rowIndex * ROW_HEIGHT,null);
+      graphics.drawImage(image, columnIndex * COLUMN_WIDTH, rowIndex * ROW_HEIGHT, null);
     }
   }
 
