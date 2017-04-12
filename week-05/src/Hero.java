@@ -8,6 +8,5 @@ public class Hero extends Character {
   public Hero() {
     super(0, 0);
     image = ImageLoader.getInstance().HERO_DOWN;
-    Character.characterList.add(this);
   }
 }

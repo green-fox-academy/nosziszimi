@@ -24,7 +24,7 @@ import java.awt.*;
       for (int i = 0; i < 3; i++) {
         new Skeleton(area);
       }
-      
+
       // set the size of your draw board
       setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
       setVisible(true);

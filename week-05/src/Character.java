@@ -11,5 +11,6 @@ public class Character extends GameObject {
 
   public Character(int column, int row) {
     super(column, row);
+    characterList.add(this);
   }
 }
