@@ -4,7 +4,6 @@
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,6 +12,7 @@ import java.awt.*;
     static final int BOARD_HEIGHT = 720;
     Area area;
     Hero hero;
+    Boss boss;
     WallChecker wallChecker;
 
     public Board() {
@@ -24,6 +24,7 @@ import java.awt.*;
       for (int i = 0; i < 3; i++) {
         new Skeleton(area);
       }
+      boss = new Boss(area);
 
       // set the size of your draw board
       setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));

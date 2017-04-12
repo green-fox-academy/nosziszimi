@@ -12,6 +12,7 @@ public class GameObject {
   public static final int ROW_HEIGHT = 72;
   BufferedImage image;
   int columnIndex, rowIndex;
+  public static WallChecker wallChecker = new WallChecker();
 
 
   public GameObject() {
@@ -23,9 +24,29 @@ public class GameObject {
     this.rowIndex = row;
   }
 
+  public GameObject(Area area) {
+    while (!isFree(area)) {
+      columnIndex = (int) (Math.random() * 10);
+      rowIndex = (int) (Math.random() * 10);
+    }
+  }
+
   public void draw(Graphics graphics) {
     if (image != null) {
       graphics.drawImage(image, columnIndex * COLUMN_WIDTH, rowIndex * ROW_HEIGHT,null);
+    }
+  }
+
+  public boolean isFree(Area area) {
+    for (Character character : Character.characterList) {
+      if (character.columnIndex == columnIndex && character.rowIndex == rowIndex) {
+        return false;
+      }
+    }
+    if (wallChecker.isWall(area, this)) {
+      return false;
+    } else {
+      return true;
     }
   }
 }

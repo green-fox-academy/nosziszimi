@@ -9,7 +9,7 @@ public class WallChecker {
 
   }
 
-  public boolean isLeftWall(Area area, Character character) {
+  public boolean isLeftWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
       if (wall.columnIndex == character.columnIndex - 1 && wall.rowIndex == character.rowIndex) {
@@ -18,7 +18,7 @@ public class WallChecker {
     }
     return isWall;
   }
-  public boolean isRightWall(Area area, Character character) {
+  public boolean isRightWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
       if (wall.columnIndex == character.columnIndex + 1 && wall.rowIndex == character.rowIndex) {
@@ -27,7 +27,7 @@ public class WallChecker {
     }
     return isWall;
   }
-  public boolean isUpWall(Area area, Character character) {
+  public boolean isUpWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
       if (wall.columnIndex == character.columnIndex && wall.rowIndex == character.rowIndex - 1) {
@@ -36,7 +36,7 @@ public class WallChecker {
     }
     return isWall;
   }
-  public boolean isDownWall(Area area, Character character) {
+  public boolean isDownWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
       if (wall.columnIndex == character.columnIndex && wall.rowIndex == character.rowIndex + 1) {
@@ -45,7 +45,7 @@ public class WallChecker {
     }
     return isWall;
   }
-  public boolean isWall(Area area, Character character) {
+  public boolean isWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
       if (wall.columnIndex == character.columnIndex && wall.rowIndex == character.rowIndex) {
