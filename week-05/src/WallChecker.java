@@ -45,4 +45,13 @@ public class WallChecker {
     }
     return isWall;
   }
+  public boolean isWall(Area area, Character character) {
+    boolean isWall = false;
+    for (Tile wall : area.wallList) {
+      if (wall.columnIndex == character.columnIndex && wall.rowIndex == character.rowIndex) {
+        isWall = true;
+      }
+    }
+    return isWall;
+  }
 }

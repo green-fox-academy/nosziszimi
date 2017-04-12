@@ -4,6 +4,7 @@
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,12 +13,16 @@ import java.awt.*;
     static final int BOARD_HEIGHT = 720;
     Area area;
     Hero hero;
+    Skeleton skeleton;
     WallChecker wallChecker;
+    ArrayList<Character> skeletonList;
 
     public Board() {
       area = new Area();
       hero = new Hero();
+      skeleton = new Skeleton(area);
       wallChecker = new WallChecker();
+      skeletonList = new ArrayList<>();
 
       area.fillTilesList();
       area.fillWallList();
@@ -39,7 +44,9 @@ import java.awt.*;
       for (Tile tile : area.wallList) {
         tile.draw(graphics);
       }
-      hero.draw(graphics);
+      for (Character character : Character.characterList) {
+        character.draw(graphics);
+      }
     }
 
     public static void main(String[] args) {
