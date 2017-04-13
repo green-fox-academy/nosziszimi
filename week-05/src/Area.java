@@ -20,7 +20,7 @@ public class Area {
 
   void fillFloorList() {
     for (int column = 0; column < 10; column++) {
-      for (int row = 0; row < 10; row++) {
+      for (int row = 0; row < 9; row++) {
         floorList.add(new Floor(column, row));
       }
     }
@@ -43,10 +43,10 @@ public class Area {
         }
       }
       if (column == 3) {
-        for (int row = 0; row < 10; row += 2) {
+        for (int row = 0; row < 9; row += 2) {
           wallList.add(new Wall(column, row));
         }
-        for (int row = 1; row < 10; row += 4) {
+        for (int row = 1; row < 9; row += 4) {
           wallList.add(new Wall(column, row));
         }
       }
@@ -57,7 +57,7 @@ public class Area {
         for (int row = 1; row < 5; row += 2) {
           wallList.add(new Wall(column, row));
         }
-        for (int row = 7; row < 10; row += 2) {
+        for (int row = 7; row < 9; row += 2) {
           wallList.add(new Wall(column, row));
         }
       }
@@ -65,7 +65,6 @@ public class Area {
         wallList.add(new Wall(column, 4));
         wallList.add(new Wall(column, 6));
         wallList.add(new Wall(column, 7));
-        wallList.add(new Wall(column, 9));
       }
       if (column == 7) {
         wallList.add(new Wall(column, 1));
