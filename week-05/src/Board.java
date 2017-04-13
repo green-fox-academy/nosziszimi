@@ -43,7 +43,8 @@ public class Board extends JComponent implements KeyListener {
       character.draw(graphics);
     }
 
-    graphics.drawString("dsfg", 700, 700);
+    graphics.drawString("Hero (Level 1)     HP:  " + hero.currentHP + "/" + hero.maxHP
+            + "    |    DP:  " + hero.dP + "    |    SP:  " + hero.sP, 72, 680);
   }
 
   public static void main(String[] args) {
