@@ -42,6 +42,8 @@ public class Board extends JComponent implements KeyListener {
     for (Character character : Character.characterList) {
       character.draw(graphics);
     }
+
+    graphics.drawString("dsfg", 700, 700);
   }
 
   public static void main(String[] args) {
