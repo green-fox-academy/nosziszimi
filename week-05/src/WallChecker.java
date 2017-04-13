@@ -52,7 +52,8 @@ public class WallChecker {
   public boolean isWall(Area area, GameObject character) {
     boolean isWall = false;
     for (Tile wall : area.wallList) {
-      if (wall.columnIndex == character.columnIndex && wall.rowIndex == character.rowIndex) {
+      if (wall.columnIndex == character.columnIndex
+              && wall.rowIndex == character.rowIndex) {
         isWall = true;
       }
     }

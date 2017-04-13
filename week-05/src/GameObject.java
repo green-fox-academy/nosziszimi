@@ -34,13 +34,15 @@ public class GameObject {
 
   public void draw(Graphics graphics) {
     if (image != null) {
-      graphics.drawImage(image, columnIndex * COLUMN_WIDTH, rowIndex * ROW_HEIGHT, null);
+      graphics.drawImage(image, columnIndex * COLUMN_WIDTH,
+              rowIndex * ROW_HEIGHT, null);
     }
   }
 
   public boolean isFree(Area area) {
     for (Character character : Character.characterList) {
-      if (character.columnIndex == columnIndex && character.rowIndex == rowIndex) {
+      if (character.columnIndex == columnIndex
+              && character.rowIndex == rowIndex) {
         return false;
       }
     }
