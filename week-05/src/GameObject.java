@@ -28,7 +28,7 @@ public class GameObject {
   public GameObject(Area area) {
     while (!isFree(area)) {
       columnIndex = (int) (Math.random() * 10);
-      rowIndex = (int) (Math.random() * 10);
+      rowIndex = (int) (Math.random() * 9);
     }
   }
 

@@ -74,7 +74,7 @@ public class Area {
       if (column == 8) {
         wallList.add(new Wall(column, 1));
         wallList.add(new Wall(column, 2));
-        for (int row = 4; row < 9; row++) {
+        for (int row = 4; row < 8; row++) {
           wallList.add(new Wall(column, row));
         }
       }

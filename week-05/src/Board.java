@@ -84,7 +84,7 @@ public class Board extends JComponent implements KeyListener {
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       hero.image = ImageLoader.getInstance().HERO_DOWN;
-      if (hero.rowIndex < 9 && !wallChecker.isDownWall(area, hero)) {
+      if (hero.rowIndex < 8 && !wallChecker.isDownWall(area, hero)) {
         hero.rowIndex++;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
