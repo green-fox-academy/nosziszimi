@@ -6,7 +6,11 @@ package main.java.music;
 public class BassGuitar extends StringedInstrument {
 
   public BassGuitar() {
-    numberOfStrings = 4;
+    this(4);
+  }
+
+  public BassGuitar(int strings) {
+    numberOfStrings = strings;
     sound = "Duum-duum-duum";
   }
 }
