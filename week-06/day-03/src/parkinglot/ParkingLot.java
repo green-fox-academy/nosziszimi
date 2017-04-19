@@ -1,7 +1,10 @@
 package parkinglot;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * Created by Nóra on 2017. 04. 19..
@@ -12,46 +15,59 @@ public class ParkingLot {
     List<Car> carList = new ArrayList<>();
 
     for (int i = 0; i < 256; i++) {
-      carList.add(new Car(CarTypes.randomColor(), Colors.randomColor()));
+      carList.add(new Car(CarTypes.randomType(), Colors.randomColor()));
     }
 
-    int trabantCounter = 0;
-    int mercedesCounter = 0;
-    int audiCounter = 0;
-
-    int redCounter = 0;
-    int greenCounter = 0;
-    int blueCounter = 0;
-
-    for (Car car : carList) {
-      if (car.type == CarTypes.TRABANT) {
-        trabantCounter++;
-      } else if (car.type == CarTypes.MERCEDES) {
-        mercedesCounter++;
-      } else if (car.type == CarTypes.AUDI) {
-        audiCounter++;
+    int typeCounter = 0;
+    HashMap<String, Integer> typeOccurrences = new HashMap<>();
+    for (CarTypes carType : CarTypes.values()) {
+      for (Car car : carList) {
+        if (car.type.equals(carType)) {
+          typeCounter++;
+        }
       }
-
-      if (car.color == Colors.RED) {
-        redCounter++;
-      } else if (car.color == Colors.GREEN) {
-        greenCounter++;
-      } else if (car.color == Colors.BLUE) {
-        blueCounter++;
-      }
+      String typeName = carType.toString();
+      typeOccurrences.put(typeName, typeCounter);
     }
 
-    System.out.printf("There are %d %s.", trabantCounter, "Trabant");
-    System.out.println();
-    System.out.printf("There are %d %s.", mercedesCounter, "Mercedes");
-    System.out.println();
-    System.out.printf("There are %d %s.", audiCounter, "Audi");
-    System.out.println();
-    System.out.println();
-    System.out.printf("There are %d %s cars.", redCounter, "red");
-    System.out.println();
-    System.out.printf("There are %d %s cars.", greenCounter, "green");
-    System.out.println();
-    System.out.printf("There are %d %s cars.", blueCounter, "blue");
+    System.out.println(typeOccurrences);
+
+    int colorCounter = 0;
+    HashMap<String, Integer> colorOccurrences = new HashMap<>();
+    for (Colors color : Colors.values()) {
+      for (Car car : carList) {
+        if (car.color.equals(color)) {
+          colorCounter++;
+        }
+      }
+      String colorName = color.toString();
+      colorOccurrences.put(colorName, colorCounter);
+    }
+
+    System.out.println(colorOccurrences);
+
+    HashMap<String, Integer> occurences2 = new HashMap();
+    List<Integer> occurrences = new ArrayList<>();
+    int maxValue = 0;
+    for (CarTypes carType : CarTypes.values()) {
+      for (Colors color : Colors.values()) {
+        int counter = 0;
+        for (Car car : carList) {
+          if (car.type.equals(carType) && car.color.equals(color)) {
+            counter++;
+          }
+        }
+        String carColorAndType = color.toString() + " " + carType.toString();
+        occurences2.put(carColorAndType, counter);
+      }
+
+      maxValue = Collections.max(occurences2.values());
+
+    }
+    for (Entry<String, Integer> entry : occurences2.entrySet()) {
+      if (entry.getValue().equals(maxValue)) {
+        System.out.println("The most frequently occurring vehicle is: " + entry.getKey());
+      }
+    }
   }
 }

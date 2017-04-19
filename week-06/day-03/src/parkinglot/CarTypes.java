@@ -6,7 +6,7 @@ package parkinglot;
 public enum CarTypes {
   TRABANT, MERCEDES, AUDI;
 
-  public static CarTypes randomColor() {
+  public static CarTypes randomType() {
     return values()[(int) (Math.random() * values().length)];
   }
 }
