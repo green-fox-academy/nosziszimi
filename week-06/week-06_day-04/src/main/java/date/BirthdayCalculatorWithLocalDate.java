@@ -3,7 +3,7 @@ package date;
 /**
  * Created by Nóra on 2017. 04. 20..
  */
-public class BirthdayCalculatorWithLocalDate {
+public interface BirthdayCalculatorWithLocalDate <T>{
   T parseDate(String str);
 
   String printMonthAndDay(T date);

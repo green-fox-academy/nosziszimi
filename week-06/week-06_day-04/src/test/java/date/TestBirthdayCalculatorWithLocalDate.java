@@ -15,7 +15,7 @@ public class TestBirthdayCalculatorWithLocalDate {
   private static final String EXPECTED_DATE_STR = "2016-11-30";
   private static final LocalDate EXPECTED_DATE = LocalDate.parse(EXPECTED_DATE_STR, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
-  private BirthdayCalculator<LocalDate> birthdayCalculator = new BirthdayWithLocalDate();
+  private BirthdayCalculatorWithLocalDate<LocalDate> birthdayCalculator = new BirthdayCalculator();
 
   @Test
   public void testParseDate() throws Exception {
@@ -86,7 +86,8 @@ public class TestBirthdayCalculatorWithLocalDate {
     if (now.getDayOfYear() == date.getDayOfYear()) {
       expected = 0;
     } else if (now.getDayOfYear() > date.getDayOfYear()) {
-      return LocalDate.of(now.getYear(), 12, 31).getDayOfYear() - now.getDayOfYear() + date.getDayOfYear();
+      return LocalDate.of(now.getYear(), 12, 31).getDayOfYear()
+              - now.getDayOfYear() + date.getDayOfYear();
     } else {
       return date.getDayOfYear() - now.getDayOfYear();
     }
