@@ -2,6 +2,7 @@
 out
 *.iml
 *.xml
+.class
 
 settings.gradle
 .gradle
