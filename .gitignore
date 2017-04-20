@@ -3,6 +3,11 @@ out
 *.iml
 *.xml
 
+settings.gradle
+.gradle
+gradle
+!gradle-wrapper.jar
+
 atvaltaskivagott.PNG
 hexadecimalnumbers.PNG
 redgreenblue.gif
