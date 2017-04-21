@@ -39,7 +39,7 @@ public class ToDoList {
     String[] columns;
     for (String line : linesOfFile) {
       columns = line.split(";");
-      tasks.add(new ToDo(columns[0], columns[1]));
+      tasks.add(new ToDo(columns[0], columns[1], Integer.parseInt(columns[2])));
     }
   }
 
