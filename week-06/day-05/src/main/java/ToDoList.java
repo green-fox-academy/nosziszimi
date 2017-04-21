@@ -61,13 +61,13 @@ public class ToDoList {
       }
       line = check + ";" + tasks.get(j).task + ";" + tasks.get(j).id;
       lines.add(line);
+    }
       lines.add(0, Integer.toString(ToDo.counter));
       try {
         Files.write(path, lines);
       } catch (IOException e) {
         e.printStackTrace();
       }
-    }
   }
 
   void list() {
