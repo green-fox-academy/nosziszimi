@@ -10,6 +10,8 @@ settings.gradle
 gradle
 !gradle-wrapper.jar
 
+tasks.csv
+
 atvaltaskivagott.PNG
 hexadecimalnumbers.PNG
 redgreenblue.gif
