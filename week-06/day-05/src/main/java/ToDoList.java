@@ -18,7 +18,7 @@ public class ToDoList {
   ArrayList<String> linesOfFile;
 
   public ToDoList() {
-    path = Paths.get("assets/tasks.csv");
+    path = Paths.get("src/main/resources/tasks.csv");
     file = new File(String.valueOf(path));
     tasks = new ArrayList<>();
     linesOfFile = new ArrayList<>();
