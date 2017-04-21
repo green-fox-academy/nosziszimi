@@ -27,8 +27,8 @@ public class ToDo {
       isDone = false;
     }
     this.task = task;
-    counter = id;
-    counter++;
+    this.id = id;
+    counter = id++;
 
   }
 
