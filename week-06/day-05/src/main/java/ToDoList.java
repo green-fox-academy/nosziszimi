@@ -80,7 +80,7 @@ public class ToDoList {
         } else {
           check = "[ ]";
         }
-        System.out.println(i + " - " + check + " " + todo.task);
+        System.out.println(i + " - " + "id: " + todo.id+ " " + check + " " + todo.task);
         i++;
       }
     } else {
