@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 /**
  * Created by Nóra on 2017. 04. 06..
  */
@@ -7,6 +9,7 @@ public class ToDo {
   String task;
   static int counter;
   int id;
+  LocalDate createdAt, complietedAt;
 
   public ToDo() {
     this("");
