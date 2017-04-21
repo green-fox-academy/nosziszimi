@@ -17,7 +17,7 @@ public class ToDo {
   }
 
   public ToDo(String check, String task) {
-    this(check, task, 1);
+    this(check, task, counter);
   }
 
   public ToDo(String check, String task, int id) {
@@ -28,7 +28,7 @@ public class ToDo {
     }
     this.task = task;
     this.id = id;
-    counter = id++;
+    counter = ++id;
 
   }
 
