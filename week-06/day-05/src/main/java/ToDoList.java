@@ -36,9 +36,10 @@ public class ToDoList {
   }
 
   void linesToTodo() {
+    ToDo.counter = Integer.parseInt(linesOfFile.get(0));
     String[] columns;
-    for (String line : linesOfFile) {
-      columns = line.split(";");
+    for (int i = 1; i < linesOfFile.size(); i++) {
+      columns = linesOfFile.get(i).split(";");
       tasks.add(new ToDo(columns[0], columns[1], Integer.parseInt(columns[2])));
     }
   }
