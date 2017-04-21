@@ -58,7 +58,7 @@ public class ToDoList {
       } else {
         check = "[ ]";
       }
-      line = check + ";" + tasks.get(j).task;
+      line = tasks.get(j).id + check + ";" + tasks.get(j).task;
       lines.add(line);
       try {
         Files.write(path, lines);
