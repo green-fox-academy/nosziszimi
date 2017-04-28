@@ -6,7 +6,7 @@ import java.util.*;
 public class Lists_Ex06_IsInList {
   public static void main(String[] args) {
     ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(2, 4, 6, 8, 10, 12, 14, 16));
-    ArrayList<Integer> searched = new ArrayList<Integer>(Arrays.asList(4,8,12,16,));
+    ArrayList<Integer> searched = new ArrayList<>(Arrays.asList(4,8,12,16));
     ArrayList<Integer> indexOfSearchedNumbers = new ArrayList<Integer>();
 
     if (list.containsAll(searched)){
