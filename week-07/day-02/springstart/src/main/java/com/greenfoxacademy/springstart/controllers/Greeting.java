@@ -1,5 +1,6 @@
 package com.greenfoxacademy.springstart.controllers;
 
+import java.util.concurrent.atomic.AtomicLong;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,9 +12,13 @@ import lombok.Setter;
 @AllArgsConstructor(staticName = "of")
 public class Greeting {
 
-  @Getter @Setter
+  static AtomicLong atomicLong = new AtomicLong(0);
+
+  @Getter
+  @Setter
   private long id;
-  @Getter @Setter
+  @Getter
+  @Setter
   private String content;
 
 }

@@ -1,5 +1,9 @@
 package com.greenfoxacademy.springstart.controllers;
 
+
+
+import static com.greenfoxacademy.springstart.controllers.Greeting.atomicLong;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,6 +18,6 @@ public class HelloRESTController {
   @RequestMapping(value="/greeting")
   @ResponseBody
   public Greeting greeting(@RequestParam("name")String name) {
-    return Greeting.of(1, "Hello " + name + "!");
+    return Greeting.of(atomicLong.incrementAndGet(), "Hello " + name + "!");
   }
 }
