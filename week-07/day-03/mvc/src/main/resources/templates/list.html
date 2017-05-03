@@ -7,7 +7,7 @@
 </head>
 <body>
 <div >
-  <p th:each="account : ${list}" th:text="${account.name} + ' ' + ${#numbers.formatDecimal(account.balance,1,2)}
+  <p th:each="account : ${list}" th:text="${list.indexOf(account)} + ' ' + ${account.name} + ' ' + ${#numbers.formatDecimal(account.balance,1,2)}
   + ' ' + 'Zebra' + ' ' +  ${account.animalType}"></p>
 </div>
 </body>
