@@ -8,6 +8,14 @@ public class BankAccount {
   private float balance;
   private boolean king, badGuy;
 
+  public BankAccount(){
+
+  }
+
+  public BankAccount(String name, float balance, String animalType){
+   this(name, balance, animalType, false);
+  }
+
   public BankAccount(String name, float balance, String animalType, boolean isKing) {
     this(name, balance, animalType, isKing, false);
   }
@@ -26,6 +34,10 @@ public class BankAccount {
 
   public float getBalance() {
     return balance;
+  }
+
+  public void setBalance(float balance) {
+    this.balance = balance;
   }
 
   public String getAnimalType() {
