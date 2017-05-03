@@ -6,11 +6,13 @@ package com.greenfox.nori.mvc.model;
 public class BankAccount {
   private String name, animalType;
   private float balance;
+  private boolean king;
 
-  public BankAccount(String name, float balance, String animalType) {
+  public BankAccount(String name, float balance, String animalType, boolean isKing) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    king = isKing;
   }
 
   public String getName() {
@@ -23,5 +25,9 @@ public class BankAccount {
 
   public String getAnimalType() {
     return animalType;
+  }
+
+  public boolean getKing() {
+    return king;
   }
 }

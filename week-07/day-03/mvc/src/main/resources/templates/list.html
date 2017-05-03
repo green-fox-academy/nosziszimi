@@ -6,9 +6,13 @@
   <meta charset="utf-8"/>
 </head>
 <body>
-<div >
-  <p th:each="account : ${list}" th:text="${list.indexOf(account)} + ' ' + ${account.name} + ' ' + ${#numbers.formatDecimal(account.balance,1,2)}
-  + ' ' + 'Zebra' + ' ' +  ${account.animalType}"></p>
+<div th:each="account : ${list}">
+  <p  th:if="${account.king}"> <p style="color:#FF0000" th:text="${list.indexOf(account)}
+  + ' ' + ${account.name} + ' ' + ${#numbers.formatDecimal(account.balance,1,2)}
+  + ' ' + 'Zebra' + ' ' +  ${account.animalType}"></p></p>
+  <p th:unless="${account.king}"> <p th:text="${list.indexOf(account)} + ' ' + ${account.name}
+  + ' ' + ${#numbers.formatDecimal(account.balance,1,2)}
+  + ' ' + 'Zebra' + ' ' +  ${account.animalType}"></p></p>
 </div>
 </body>
 </html>
