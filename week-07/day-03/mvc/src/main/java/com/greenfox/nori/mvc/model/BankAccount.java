@@ -8,6 +8,10 @@ public class BankAccount {
   private float balance;
   private boolean king, badGuy;
 
+  public BankAccount(String name, float balance, String animalType, boolean isKing) {
+    this(name, balance, animalType, isKing, false);
+  }
+
   public BankAccount(String name, float balance, String animalType, boolean isKing, boolean isBad) {
     this.name = name;
     this.balance = balance;
