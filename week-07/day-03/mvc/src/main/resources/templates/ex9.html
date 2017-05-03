@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Thymeleaf Exercise 1</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Balance</th>
+          <th>Currency</th>
+          <th>Animal Type</th>
+          <th>Good or Bad</th>
+        </tr>
+        <tr th:each="account : ${list}" th:style="${account.king ? 'color:#FF0000':''}">
+          <td th:text="${list.indexOf(account)}"></td>
+          <td th:text="${account.name}"></td>
+          <td th:text="${#numbers.formatDecimal(account.balance,1,2)}"></td>
+          <td>Zebra</td>
+          <td th:text="${account.animalType}"></td>
+          <td th:switch="${account.badGuy}">
+            <p th:case="true">bad guy</p>
+            <p th:case="false">good guy</p>
+          </td>
+          <td>
+            <form action="@{/hit(id=${list.indexOf(account)})}">
+              <input type="submit" value="hit it"/>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
