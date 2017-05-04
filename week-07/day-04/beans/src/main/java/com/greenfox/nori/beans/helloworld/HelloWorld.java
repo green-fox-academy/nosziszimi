@@ -1,4 +1,4 @@
-package com.greenfox.nori.beans.models;
+package com.greenfox.nori.beans.helloworld;
 
 /**
  * Created by Nóra on 2017. 05. 04..

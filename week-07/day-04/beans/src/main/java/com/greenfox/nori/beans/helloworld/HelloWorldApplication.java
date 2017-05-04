@@ -1,17 +1,16 @@
-package com.greenfox.nori.beans;
+package com.greenfox.nori.beans.helloworld;
 
-import com.greenfox.nori.beans.models.HelloWorld;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
-public class BeansApplication {
+public class HelloWorldApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(BeansApplication.class, args);
+		SpringApplication.run(HelloWorldApplication.class, args);
 		ApplicationContext context = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
 		HelloWorld helloWorld = context.getBean(HelloWorld.class);
 		helloWorld.setMessage("Hello World!");

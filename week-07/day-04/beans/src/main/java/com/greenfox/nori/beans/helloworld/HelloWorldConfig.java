@@ -1,6 +1,6 @@
-package com.greenfox.nori.beans;
+package com.greenfox.nori.beans.helloworld;
 
-import com.greenfox.nori.beans.models.HelloWorld;
+import com.greenfox.nori.beans.helloworld.HelloWorld;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
