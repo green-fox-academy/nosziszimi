@@ -1,8 +1,11 @@
 package com.greenfox.nori.mvc.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by Nóra on 2017. 05. 03..
  */
+@Component
 public class BankAccount {
   private String name, animalType;
   private float balance;
@@ -38,6 +41,10 @@ public class BankAccount {
 
   public void setBalance(float balance) {
     this.balance = balance;
+  }
+
+  public void increaseBalance(int increase) {
+    balance += increase;
   }
 
   public String getAnimalType() {
