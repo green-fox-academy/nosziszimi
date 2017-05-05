@@ -1,5 +1,6 @@
 package com.greenfox.nori.mvc.controllers;
 
+import com.greenfox.nori.mvc.model.AccountList;
 import com.greenfox.nori.mvc.model.BankAccount;
 import com.greenfox.nori.mvc.model.Hit;
 import java.util.ArrayList;
@@ -16,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class Ex9Controller {
 
-  List<BankAccount> bankAccounts = new ArrayList<>();
+  @Autowired
+  AccountList bankAccounts;
 
   @Autowired
   Hit increase;
