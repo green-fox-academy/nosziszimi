@@ -7,16 +7,17 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BankAccount {
+
   private String name, animalType;
   private float balance;
   private boolean king, badGuy;
 
-  public BankAccount(){
+  public BankAccount() {
 
   }
 
-  public BankAccount(String name, float balance, String animalType){
-   this(name, balance, animalType, false);
+  public BankAccount(String name, float balance, String animalType) {
+    this(name, balance, animalType, false);
   }
 
   public BankAccount(String name, float balance, String animalType, boolean isKing) {

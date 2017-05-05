@@ -21,8 +21,6 @@ public class Ex9Controller {
   @Autowired
   Hit increase;
 
-
-
   @RequestMapping("/Exercise9")
   public String showElements(Model model) {
     if (bankAccounts.size() == 0) {

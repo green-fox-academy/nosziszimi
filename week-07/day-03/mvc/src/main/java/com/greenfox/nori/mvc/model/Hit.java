@@ -15,7 +15,7 @@ public class Hit {
   String hit;
   String accountIndex;
 
- public int getHitInt() {
+  public int getHitInt() {
     return Integer.parseInt(hit);
   }
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class Ex8Controller {
+
   @RequestMapping("/Exercise8")
   public String showElements(Model model) {
     List<BankAccount> bankAccounts = new ArrayList<>();
