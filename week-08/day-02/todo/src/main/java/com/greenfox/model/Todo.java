@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,4 +19,17 @@ public class Todo {
   String title;
   boolean isUrgent = false;
   boolean isDone = false;
+
+  public Todo(){
+
+  }
+
+  @Override
+  public String toString() {
+    return title;
+  }
+
+  public Todo(String title) {
+    this.title = title;
+  }
 }
