@@ -1,5 +1,6 @@
 package com.greenfox.model;
 
+import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import lombok.Setter;
  */
 @Setter @Getter
 public class Result {
+
   int result;
 
   public static int numberadder(int n) {
@@ -22,8 +24,24 @@ public class Result {
     if (n < 1) {
       return 1;
     } else {
-      return factor(n-1) * n;
+      return factor(n - 1) * n;
     }
+  }
+
+  public static int sum(ArrayList<Integer> numbers) {
+    Integer sum = 0;
+    for (int i = 0; i < numbers.size(); i++) {
+      sum += numbers.get(i);
+    }
+    return sum;
+  }
+
+  public static int multiply(ArrayList<Integer> numbers) {
+    Integer multiplication = 1;
+    for (int i = 0; i < numbers.size(); i++) {
+      multiplication *= numbers.get(i);
+    }
+    return multiplication;
   }
 
 }
