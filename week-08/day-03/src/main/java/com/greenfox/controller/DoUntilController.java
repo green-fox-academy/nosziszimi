@@ -1,7 +1,10 @@
 package com.greenfox.controller;
 
+import com.greenfox.model.Error;
 import com.greenfox.model.Result;
 import com.greenfox.model.Until;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -11,6 +14,13 @@ import org.springframework.web.bind.annotation.*;
 public class DoUntilController {
 
   Result result = new Result();
+  Error error = new Error();
+
+  @ExceptionHandler(HttpMessageNotReadableException.class)
+  public Error exception() {
+    error.setError("Please provide a number!");
+    return error;
+  }
 
   @PostMapping("/dountil/{what}")
   public Result doUntil(@RequestBody Until until, @PathVariable("what") String what) {
