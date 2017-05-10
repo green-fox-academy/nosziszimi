@@ -13,19 +13,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
-  Doubling d = new Doubling();
-  Error e = new Error();
+  Doubling doubling = new Doubling();
+  Error error = new Error();
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
   public Error exception() {
-    e.setError("Please provide an input!");
-    return e;
+    error.setError("Please provide an input!");
+    return error;
   }
 
   @GetMapping("/doubling")
   public Doubling doubling(@RequestParam("input") int input) {
-    d.setReceived(input);
-    d.setResult(input*2);
-    return d;
+    doubling.setReceived(input);
+    doubling.setResult(input*2);
+    return doubling;
   }
+
 }
