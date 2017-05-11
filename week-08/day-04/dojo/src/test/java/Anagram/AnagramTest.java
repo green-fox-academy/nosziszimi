@@ -1,6 +1,8 @@
-import static junit.framework.TestCase.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
+package Anagram;
 
+import static junit.framework.TestCase.assertEquals;
+
+import Anagram.Anagram;
 import org.junit.Test;
 
 /**
