@@ -1,6 +1,6 @@
 package com.greenfox.nori.reddit.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,4 +21,16 @@ public class Post {
     String title, href;
     Timestamp timestamp;
     int score;
+    String owner;
+    int vote;
+
+    public Post() {
+    timestamp = new Timestamp(System.currentTimeMillis());
+    }
+
+    public Post(String title, String href) {
+      this.title = title;
+      this.href = href;
+      timestamp = new Timestamp(System.currentTimeMillis());
+    }
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Nóra on 2017. 05. 12..
  */
 @RestController
-public class PostControler {
+public class PostController {
 
   @Autowired
   private PostRepository repo;
@@ -30,6 +30,7 @@ public class PostControler {
 
   @PostMapping("/posts")
   public Post addpost(@RequestBody Post post) {
+    repo.save(post);
     return post;
   }
 }
