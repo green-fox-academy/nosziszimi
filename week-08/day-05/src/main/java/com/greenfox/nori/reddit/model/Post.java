@@ -33,4 +33,9 @@ public class Post {
       this.href = href;
       timestamp = new Timestamp(System.currentTimeMillis());
     }
+
+    public void upvote() {
+      setScore(getScore()+1);
+      setVote(1);
+    }
 }
