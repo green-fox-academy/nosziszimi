@@ -38,4 +38,9 @@ public class Post {
       setScore(getScore()+1);
       setVote(1);
     }
+
+    public void downvote() {
+      setScore(getScore()-1);
+      setVote(-1);
+    }
 }

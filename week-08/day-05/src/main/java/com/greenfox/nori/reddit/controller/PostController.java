@@ -42,4 +42,12 @@ public class PostController {
     repo.save(repo.findOne(id));
     return repo.findOne(id);
   }
+
+  @PutMapping("/posts/{id}/downvote")
+  public Post downvote(@PathVariable("id") long id ) {
+    repo.findOne(id).downvote();
+    repo.save(repo.findOne(id));
+    return repo.findOne(id);
+  }
+
 }
