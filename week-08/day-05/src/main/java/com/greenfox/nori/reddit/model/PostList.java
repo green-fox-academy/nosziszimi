@@ -1,6 +1,7 @@
 package com.greenfox.nori.reddit.model;
 
 import java.util.ArrayList;
+import javax.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+
 public class PostList {
 
-    private ArrayList<Post> posts;
+    private Iterable<Post> posts;
 }

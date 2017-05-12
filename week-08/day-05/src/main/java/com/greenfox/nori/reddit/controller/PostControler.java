@@ -1,5 +1,6 @@
 package com.greenfox.nori.reddit.controller;
 
+import com.greenfox.nori.reddit.model.Post;
 import com.greenfox.nori.reddit.model.PostList;
 import com.greenfox.nori.reddit.services.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ public class PostControler {
   @GetMapping("/posts")
   public PostList list() {
     PostList postList = new PostList();
+    repo.save(new Post());
+    repo.save(new Post());
+    repo.save(new Post());
+    postList.setPosts((repo.findAll()));
     return postList;
   }
 }
