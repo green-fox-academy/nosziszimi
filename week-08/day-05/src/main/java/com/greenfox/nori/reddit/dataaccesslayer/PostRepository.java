@@ -1,4 +1,4 @@
-package com.greenfox.nori.reddit.services;
+package com.greenfox.nori.reddit.dataaccesslayer;
 
 import com.greenfox.nori.reddit.model.Post;
 import java.util.function.LongPredicate;

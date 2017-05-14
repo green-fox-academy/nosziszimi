@@ -2,9 +2,7 @@ package com.greenfox.nori.reddit.controller;
 
 import com.greenfox.nori.reddit.model.Post;
 import com.greenfox.nori.reddit.model.PostList;
-import com.greenfox.nori.reddit.model.User;
-import com.greenfox.nori.reddit.services.PostRepository;
-import com.greenfox.nori.reddit.services.UserRepo;
+import com.greenfox.nori.reddit.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,38 +21,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
   @Autowired
-  private PostRepository repo;
-
-  @Autowired
-  private UserRepo userRepo;
+  PostService postService;
 
   @GetMapping("/posts")
   public PostList list() {
-    PostList postList = new PostList();
-    postList.setPosts((repo.findAll()));
-    return postList;
+    return postService.list();
   }
 
   @PostMapping("/posts")
   public Post addpost(@RequestBody Post post, @RequestHeader("Username") String userName) {
-    userRepo.save(new User(userName));
-    post.setOwner(userName);
-    repo.save(post);
-    return post;
+    return postService.addpost(post, userName);
   }
 
   @PutMapping("/posts/{id}/upvote")
   public Post upvote(@PathVariable("id") long id, @RequestHeader("Username") String userName) {
-    repo.findOne(id).upvote();
-    repo.save(repo.findOne(id));
-    return repo.findOne(id);
+    return postService.upvote(id, userName);
   }
 
   @PutMapping("/posts/{id}/downvote")
-  public Post downvote(@PathVariable("id") long id ) {
-    repo.findOne(id).downvote();
-    repo.save(repo.findOne(id));
-    return repo.findOne(id);
+  public Post downvote(@PathVariable("id") long id, @RequestHeader("Username") String userName ) {
+    return postService.downvote(id, userName);
   }
-
 }
