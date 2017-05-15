@@ -15,17 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GuardianController {
 
-  @ExceptionHandler
+  @ExceptionHandler(Exception.class)
+  public Error exception() {
+    Error error = new Error();
+    return error;
+  }
 
 
   @GetMapping(value="/groot")
   public Object groot(@RequestParam("message") String receivedMessage) {
-    if (receivedMessage != null) {
       Message message = new Message(receivedMessage);
       return message;
-    } else {
-      Error error = new Error();
-      return error;
-    }
   }
 }
