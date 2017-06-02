@@ -23,11 +23,11 @@ public class DoUntilController {
   }
 
   @PostMapping("/dountil/{what}")
-  public Result doUntil(@RequestBody Until until, @PathVariable("what") String what) {
-
+  public Result doUntil(@RequestBody Until until,
+          @PathVariable("what") String what) {
     if (what.equals("sum")) {
       result.setResult(Result.numberadder(until.getUntil()));
-    } else if(what.equals("factor")){
+    } else if (what.equals("factor")) {
       result.setResult(Result.factor(until.getUntil()));
     }
     return result;
