@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Nóri's calorie counter app</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <h1>Nóri's calorie counter app</h1>
+    <table>
+      <tbody>
+      <tr>
+        <th>Meal date</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Calories</th>
+        <th></th>
+        <th></th>
+      </tr>
+     <!-- <tr th:each="meal : ${list}">
+        <td th:text="${}"></td>
+        <td th:text="${}"></td>
+        <td th:text="${}"></td>
+        <td></td>
+        <td th:text="${}"></td>
+        <td>
+          <form action="hit" th:object="${hitObject}">
+            <input type="hidden" id="hit" name="hit" value="10"/>
+            <input type="hidden" id="accountIndex"
+                   name="accountIndex" th:value="${accountStat.index}"/>
+            <input type="submit" value="hit it"/>
+          </form>
+        </td>
+      </tr> -->
+      </tbody>
+    </table>
+  </body>
+</html>
