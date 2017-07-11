@@ -34,7 +34,7 @@ public class ExerciseTest {
   }
 
   @Test
-  public void sumOfMatrixIncludingNullList() {
+  public void sumOfMatrixIncludingEmptyList() {
     List<Integer> list1 = Arrays.asList(1, 2, -3, 4);
     List<Integer> list2 = new ArrayList<>();
     List<Integer> list3 = Arrays.asList(1, 2, 3, 4);
