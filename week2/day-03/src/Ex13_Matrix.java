@@ -21,5 +21,21 @@ public class Ex13_Matrix {
       System.out.println();
     }
   }
+  
+  public static void printer2 (int[][] array){
+    for (int i = 0; i < array.length; i++){
+      for (int j = 0; j < array[0].length; j++){
+        if (i == j){
+          array[i][j] = 1;
+          System.out.print(array[i][j]);
+        }
+        else{
+          array[i][j] = 0;
+          System.out.print(array[i][j]);
+        }
+      }
+    }
+      
+  }
 }
 
